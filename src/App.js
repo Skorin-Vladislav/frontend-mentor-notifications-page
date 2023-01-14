@@ -70,6 +70,16 @@ function App() {
     countStates();
   };
 
+  const clearAll = () => {
+    setState1(false);
+    setState2(false);
+    setState3(false);
+    setState4(false);
+    setState5(false);
+    setState6(false);
+    setState7(false);
+  };
+
   return (
     <div className="App">
       <div className="header">
@@ -77,7 +87,9 @@ function App() {
           <h2>Notifications</h2> <div className="counter">{counter}</div>
         </div>
 
-        <p className="clear-notifications">Mark all as read</p>
+        <p className="clear-notifications" onClick={clearAll}>
+          Mark all as read
+        </p>
       </div>
       <div className="main-page">
         <div onClick={switchState1}>
