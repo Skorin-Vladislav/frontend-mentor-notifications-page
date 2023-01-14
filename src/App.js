@@ -15,11 +15,11 @@ import TemplateNotificationPrivate from "./components/TemplateNotificationPrivat
 function App() {
   let [state1, setState1] = useState(true);
   let [state2, setState2] = useState(true);
-  let [state3, setState3] = useState(true);
-  let [state4, setState4] = useState(true);
+  let [state3, setState3] = useState(false);
+  let [state4, setState4] = useState(false);
   let [state5, setState5] = useState(true);
   let [state6, setState6] = useState(true);
-  let [state7, setState7] = useState(true);
+  let [state7, setState7] = useState(false);
 
   let states = [state1, state2, state3, state4, state5, state6, state7];
 
@@ -82,88 +82,90 @@ function App() {
 
   return (
     <div className="App">
-      <div className="header">
-        <div className="notifications">
-          <h2>Notifications</h2> <div className="counter">{counter}</div>
-        </div>
+      <div className="desktop-wrapper">
+        <div className="header">
+          <div className="notifications">
+            <h2>Notifications</h2> <div className="counter">{counter}</div>
+          </div>
 
-        <p className="clear-notifications" onClick={clearAll}>
-          Mark all as read
-        </p>
-      </div>
-      <div className="main-page">
-        <div onClick={switchState1}>
-          <TemplateNotification
-            src={avatar_mark_webber}
-            name="Mark Webber"
-            text="reacted to your recent post"
-            topic=" My first tournament today!"
-            time="1m ago"
-            state={state1}
-          />
+          <p className="clear-notifications" onClick={clearAll}>
+            Mark all as read
+          </p>
         </div>
-        <div onClick={switchState2}>
-          <TemplateNotification
-            src={avatar_angela_gray}
-            name="Angela Gray"
-            text="followed you"
-            topic=""
-            time="5m ago"
-            state={state2}
-          />
-        </div>
-        <div onClick={switchState3}>
-          <TemplateNotification
-            src={avatar_jacob_thompson}
-            name="Jacob Thompson"
-            text="has joined your group"
-            topic="Chess Club"
-            time="1 day ago"
-            state={state3}
-          />
-        </div>
+        <div className="main-page">
+          <div onClick={switchState1}>
+            <TemplateNotification
+              src={avatar_mark_webber}
+              name="Mark Webber"
+              text="reacted to your recent post"
+              topic=" My first tournament today!"
+              time="1m ago"
+              state={state1}
+            />
+          </div>
+          <div onClick={switchState2}>
+            <TemplateNotification
+              src={avatar_angela_gray}
+              name="Angela Gray"
+              text="followed you"
+              topic=""
+              time="5m ago"
+              state={state2}
+            />
+          </div>
+          <div onClick={switchState3}>
+            <TemplateNotification
+              src={avatar_jacob_thompson}
+              name="Jacob Thompson"
+              text="has joined your group"
+              topic="Chess Club"
+              time="1 day ago"
+              state={state3}
+            />
+          </div>
 
-        <div onClick={switchState4}>
-          <TemplateNotificationPrivate
-            src={avatar_rizky_hasanuddin}
-            name="Rizky Hasanuddin"
-            text="sent you a private message"
-            topic=""
-            time="5 days ago"
-            state={state4}
-          />
-        </div>
+          <div onClick={switchState4}>
+            <TemplateNotificationPrivate
+              src={avatar_rizky_hasanuddin}
+              name="Rizky Hasanuddin"
+              text="sent you a private message"
+              topic=""
+              time="5 days ago"
+              state={state4}
+            />
+          </div>
 
-        <div onClick={switchState5}>
-          <TemplateNotificationImg
-            src={avatar_kimberly_smith}
-            name="Kimberly Smith"
-            text="commented on your picture"
-            topic=""
-            time="2 weeks ago"
-            state={state5}
-            imgSrc={image_chess}
-          />
-        </div>
-        <div onClick={switchState6}>
-          <TemplateNotification
-            src={avatar_nathan_peterson}
-            name="Nathan Peterson"
-            text="reacted to your recent post"
-            topic="5 end-game strategies to increase your win rate"
-            time="2 weeks ago"
-            state={state6}
-          />
-        </div>
-        <div onClick={switchState7}>
-          <TemplateNotification
-            src={avatar_anna_kim}
-            name="Anna Kim"
-            text="left the group"
-            topic="Chess Club"
-            time="2 weeks ago"
-            state={state7}
-          />
+          <div onClick={switchState5}>
+            <TemplateNotificationImg
+              src={avatar_kimberly_smith}
+              name="Kimberly Smith"
+              text="commented on your picture"
+              topic=""
+              time="2 weeks ago"
+              state={state5}
+              imgSrc={image_chess}
+            />
+          </div>
+          <div onClick={switchState6}>
+            <TemplateNotification
+              src={avatar_nathan_peterson}
+              name="Nathan Peterson"
+              text="reacted to your recent post"
+              topic="5 end-game strategies to increase your win rate"
+              time="2 weeks ago"
+              state={state6}
+            />
+          </div>
+          <div onClick={switchState7}>
+            <TemplateNotification
+              src={avatar_anna_kim}
+              name="Anna Kim"
+              text="left the group"
+              topic="Chess Club"
+              time="2 weeks ago"
+              state={state7}
+            />
+          </div>
         </div>
       </div>
     </div>

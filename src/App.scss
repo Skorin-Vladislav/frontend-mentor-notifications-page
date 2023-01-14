@@ -67,3 +67,28 @@ body {
     min-height: 100vh;
   }
 }
+
+@media screen and (min-width: 800px) {
+  .App {
+    padding: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-grayish-blue-2;
+  }
+
+  .desktop-wrapper {
+    max-width: 800px;
+    border-radius: 10px;
+    background-color: $white;
+    padding: 2em;
+  }
+
+  .main-page {
+    min-height: 70vh !important;
+  }
+
+  .private-msg {
+    max-width: 90% !important;
+  }
+}
