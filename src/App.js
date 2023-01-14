@@ -5,7 +5,12 @@ import avatar_angela_gray from "./images/avatar-angela-gray.webp";
 import avatar_jacob_thompson from "./images/avatar-jacob-thompson.webp";
 import avatar_anna_kim from "./images/avatar-anna-kim.webp";
 import avatar_nathan_peterson from "./images/avatar-nathan-peterson.webp";
+import image_chess from "./images/image-chess.webp";
+import avatar_rizky_hasanuddin from "./images/avatar-rizky-hasanuddin.webp";
+import avatar_kimberly_smith from "./images/avatar-kimberly-smith.webp";
 import TemplateNotification from "./components/TemplateNotification";
+import TemplateNotificationImg from "./components/TemplateNotificationImg";
+import TemplateNotificationPrivate from "./components/TemplateNotificationPrivate";
 
 function App() {
   let [state1, setState1] = useState(true);
@@ -16,7 +21,7 @@ function App() {
   let [state6, setState6] = useState(true);
   let [state7, setState7] = useState(true);
 
-  let states = [state1, state2, state3, state7];
+  let states = [state1, state2, state3, state4, state5, state6, state7];
 
   let [counter, setCounter] = useState(
     states.reduce((prev, current) => (prev += current))
@@ -24,7 +29,7 @@ function App() {
 
   useEffect(() => {
     setCounter(states.reduce((prev, current) => (prev += current)));
-  }, [state1, state2, state3, state6, state7]);
+  }, [state1, state2, state3, state4, state5, state6, state7]);
 
   const countStates = () => {
     setCounter(states.reduce((prev, current) => (prev += current)));
@@ -42,6 +47,16 @@ function App() {
 
   const switchState3 = () => {
     setState3(!state3);
+    countStates();
+  };
+
+  const switchState4 = () => {
+    setState4(!state4);
+    countStates();
+  };
+
+  const switchState5 = () => {
+    setState5(!state5);
     countStates();
   };
 
@@ -75,7 +90,6 @@ function App() {
             state={state1}
           />
         </div>
-
         <div onClick={switchState2}>
           <TemplateNotification
             src={avatar_angela_gray}
@@ -86,7 +100,6 @@ function App() {
             state={state2}
           />
         </div>
-
         <div onClick={switchState3}>
           <TemplateNotification
             src={avatar_jacob_thompson}
@@ -98,6 +111,28 @@ function App() {
           />
         </div>
 
+        <div onClick={switchState4}>
+          <TemplateNotificationPrivate
+            src={avatar_rizky_hasanuddin}
+            name="Rizky Hasanuddin"
+            text="sent you a private message"
+            topic=""
+            time="5 days ago"
+            state={state4}
+          />
+        </div>
+
+        <div onClick={switchState5}>
+          <TemplateNotificationImg
+            src={avatar_kimberly_smith}
+            name="Kimberly Smith"
+            text="commented on your picture"
+            topic=""
+            time="2 weeks ago"
+            state={state5}
+            imgSrc={image_chess}
+          />
+        </div>
         <div onClick={switchState6}>
           <TemplateNotification
             src={avatar_nathan_peterson}
@@ -108,7 +143,6 @@ function App() {
             state={state6}
           />
         </div>
-
         <div onClick={switchState7}>
           <TemplateNotification
             src={avatar_anna_kim}
